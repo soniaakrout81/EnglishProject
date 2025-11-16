@@ -541,7 +541,7 @@ body {
 }
 
 
-@media (min-width: 450px) {
+@media (max-width: 450px) {
   .theme-switch{
 
     display: none;
