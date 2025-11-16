@@ -541,3 +541,25 @@ body {
 }
 
 
+@media (min-width: 450px) {
+  .theme-switch{
+
+    display: none;
+
+  }
+  .li1{
+
+    margin-right: 10px;
+
+  }
+  .p-container{
+
+    margin-top: 2000px;
+
+  }
+  .img-smaller2{
+
+    display: none;
+
+  }
+}
