@@ -1,311 +1,241 @@
-/* خلفية متحركة */
+/* ==========================================
+   CSS محسّن - Responsive واحترافي
+   - الهيكلية أنظف
+   - دعم كامل للوضع الليلي/النهاري
+   - تحسين Media Queries
+   ========================================== */
+
+/* ========== Variables ========== */
+:root {
+  --accent: #00adb5;
+  --accent-dark: #007b80;
+  --text-light: #ccc;
+  --dark: #003366;
+  --bg-default: #000;
+}
+
+/* ========== Reset & Base ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-default);
+  color: #fff;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* ========== Main Container ========== */
 .body1 {
   background-image: url("stars.jpg");
   background-repeat: repeat;
-  background-size: 10%; /* أصغر = نجوم أبعد */
+  background-size: 10%;
   background-position: 0 0;
   animation: BGscrolling 60s linear infinite;
-
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  padding: 16px;
+  gap: 24px;
 }
 
-
-/* حركة الخلفية */
 @keyframes BGscrolling {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -100vw 0;
-  }
+  from { background-position: 0 0; }
+  to { background-position: -100vw 0; }
 }
 
-
-/* عنوان الموقع */
+/* ========== Titles & Paragraphs ========== */
 .title {
-
-  color: #00adb5;
-  text-decoration: underline solid #00adb5 5px;
-  margin-bottom: 1rem;
+  color: var(--accent);
+  text-decoration: underline solid var(--accent) 5px;
   text-align: center;
-  font-size: clamp(24px, 6.5vw, 45px);
+  font-weight: 700;
   white-space: nowrap;
-  font-family: sans-serif;
-
-
+  font-size: 150px;
+  margin-bottom: 10px;
 }
 
-/* وصف الموقع */
-.p {
-  font-size: clamp(24px, 3.5vw, 10px);
-  color: #ccc;
-  text-align: center;
-  max-width: 2500px;
-  margin-bottom: 2rem;
+.p{
+  color: var(--text-light);
+  max-width: 90ch;
   line-height: 1.6;
   font-family: 'Courier New', Courier, monospace;
-  font-weight: 900;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 75px;
+}
+
+.p1{
+
+  font-size: 150px;
+  position: relative;
+  right: 1000px;
+  text-align: center;
 
 }
 
-/* حركة نبض */
-@keyframes nabth {
+.p2{
+
+  font-size: 150px;
+  position: relative;
+  right: 190px;
+
+
+}
+
+.p-container {
+  margin-top: 32px;
+  width: 100%;
+  position: relative;
+  left: 1000px;
+  top: 1000px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: var(--accent);
+  width: min(90%, 1200px);
+  margin: 16px auto;
+}
+
+
+@keyframes buttonPulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.04); }
   100% { transform: scale(1); }
 }
 
-/* زر أنيق مع تأثير نبض */
-.coolbutton {
-  background: #00adb5;
-  color: white;
-  border: none;
-  border-radius: 100px;
-  padding: 0.2rem 0.2rem;
-  font-size: clamp(24px, 3.5vw, 35px);
-  cursor: pointer;
-  box-shadow: 0 4px 30px #00adb5;
-  animation: nabth 2s infinite;
-  animation-play-state: running;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  position: relative;
-  top: clamp(24px, 1.5vw, 50px);
-  display: inline-flex;
-  gap: clamp(24px, 3.5vw, 150px);
+
+/* ========== Header ========== */
+header {
+  position: fixed;
+  top: 10px;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  gap: 500px;
+  background: transparent;
+  padding: 2px;
+}
+
+.header {
+  list-style: none;
+  display: flex;
+  gap: 100px;
   align-items: center;
 }
 
-/* عند المرور فوق الزر */
-.coolbutton:hover {
-  background-color: #007b80;
-  box-shadow: 0 4px 80px #00adb599;
-  transform: scale(1.1);
-  animation-play-state: paused;
-}
-.header{
-
-  list-style: none;
-  gap: 100px;
-  display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
-  
-
-}
-header{
-
-  display: flex;
-  max-width: 100px;
-  margin: 2rem auto;
-  
-
-
-
-}
 .li1 {
-
-  
-  text-decoration: none;
-  white-space: nowrap;
-  color: white;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  animation: nabth 2s infinite;
-  animation-play-state: running;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  margin-left: clamp(10px, 3.5vw, 10px);
-  margin-right: clamp(10px, 15vw, 100px);
-  margin-top: clamp(10px, 3.5vw, 10px);
-  margin-bottom: clamp(10px, 3.5vw, 10px);
-  display: inline-block;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-
-}
-
-.li1.toggle-li {
-  background: none !important;
-  box-shadow: none !important;
-  animation: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  font-size: clamp(14px, 1vw, 40px); /* حجم أصغر من li العادي */
-  margin-left: 3rem; /* مسافة أكبر من بقية العناصر */
-  padding: 0.5rem 1rem; /* حشوة أصغر */
-}
-
-.langSwitcher {
-  background-color: #00adb5;
+  padding: 6px 12px;
+  border-radius: 100px;
   cursor: pointer;
-  position: relative;
-  right: clamp(20px, 470px, 500px);
-  padding: 10px;
-  border-radius: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 75px;
+  animation: buttonPulse 2s infinite;
 }
-
-@media (max-width: 600px) {
-  .langSwitcher {
-    right: 10px; /* اقرب لليمين */
-    padding: 8px;
-    font-size: 14px;
-  }
-}
-
-/* شاشات متوسطة - من 601 إلى 1024 بكسل */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .langSwitcher {
-    right: 100px;
-    padding: 9px;
-    font-size: 16px;
-  }
-}
-
-/* شاشات كبيرة - فوق 1024 بكسل */
-@media (min-width: 1025px) {
-  .langSwitcher {
-    right: clamp(20px, 470px, 500px);
-    padding: 10px;
-    font-size: 18px;
-  }
-}
-
-
 
 .li1 a {
-
   text-decoration: none;
-  font-size: 25px;
-  margin: -10px;
-  padding: clamp(2px, 5vw, 9px);
+  padding: 6px 12px;
   border-radius: 50px;
-  background: #00adb5;
-  box-shadow: 0 4px 30px #00adb5;
-  margin-right: clamp(-100px, -10vw, 100px);
-
-
-  
-
+  background: var(--accent);
+  box-shadow: 0 4px 30px var(--accent);
+  color: inherit;
 }
-.p-container{
 
-  margin-top: 250px;
-
+.li1 a:hover {
+  background-color: var(--accent-dark);
+  box-shadow: 0 0px 80px var(--accent)99;
 }
-.p1 {
 
-  font-size: clamp(24px, 3.5vw, 10px);
-  color: #ccc;
-  max-width: 2500px;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 900;
-
+/* ========== Images ========== */
+.img {
+  max-width: 250px;
+  width: 250px;
+  border-radius: 300px;
+  box-shadow: 0px 1px 50px 50px rgba(255,0,0,0.25);
+  transition: transform 0.25s ease;
+  display: block;
+  margin: 16px 0;
+  position: relative;
+  right: 1000px;
 }
-.p11 {
 
-  font-size: clamp(24px, 3.5vw, 10px);
-  color: #ccc;
-  max-width: 2500px;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 900;
-  margin-left: 300px;
-
-}
 .img-smaller{
 
-  width: 250px;
-  height: 250px;
+  width: 800px;
+  height: 800px;
   display: inline;
   border-radius: 35px;
   position: absolute;
   left: 0;
-  margin-top: -100px;
+  margin-top: 2500px;
+
+}
+
+.img-smaller1{
+
+  width: 800px;
+  height: 800px;
+  display: inline;
+  border-radius: 35px;
+  position: absolute;
+  left: 0;
+  margin-top: 1750px;
+
 }
 
 .img-smaller2{
 
-  width: 250px;
-  height: 250px;
+  width: 750px;
+  height: 750px;
   position: absolute;
   right: 0;
   display: inline-block;
   border-radius: 35px;
 }
-hr{
 
-color: #00adb5;
-
-}
-.li1 a:active{
-
-  color: #003366;
-
-}
-.li3{
-
-margin-right: 200px;
-
-}
-.img{
-
-  width: clamp(10px, 3.5vw, 1000px);
+/* Problems box */
+.problems {
+  width: 1500px;
+  height: 1000px;
   border-radius: 100px;
-  align-items: flex-start;
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin-top: 10px;
-  margin-left: 0px;
-  box-shadow: 0 4px 20px 10px red;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  position: relative;
+  left: 800px;
+}
+.index-container{
+
+  position: relative;
+  top: 200px;
 
 }
-.problems{
-
-  width: 750px;
-  height: 400px;
-  border-radius: 40px;
-
-}
-.li1 a:hover{
-
-  background-color: #007b80;
-  box-shadow: 0 0px 80px #00adb599;
-  transform: scale(1);
-  animation-play-state: paused;
 
 
-}
-.coolbutton img {
-  position: static ;
-  height: auto;
-  display: inline-block !important;
-  border-radius: 0;
-  box-shadow: none;
-  margin-left: 0;
-}
+/* ========== Theme Switch ========== */
 
-/* وضع النهار */
 body.morning-mode {
     background-image: url("blue-sky.jpg");
     background-repeat: repeat;
-    color: #003366; /* نص داكن */
+    color: #003366;
 }
 
 body.morning-mode .title,
@@ -320,7 +250,7 @@ text-decoration: underline solid #003366 5px;
 
 }
 body.morning-mode .coolbutton:hover,
-body.morning-mode li:hover {
+body.morning-mode .li1:hover {
     background-color: #5aa2c6;
 }
 body {
@@ -331,7 +261,7 @@ body {
 }
 
 .theme-switch {
-    --toggle-size: 20px;
+    --toggle-size: 50px;
     --container-width: 5.625em;
     --container-height: 2.5em;
     --container-radius: 6.25em;
@@ -533,33 +463,27 @@ body {
 } 
 
 
-/* حط التوقل فوق يمين الشاشة */
+
 .theme-switch {
-  position: absolute;
-  top: 0;       /* رفع التوقل فوق الهيدر */
-  right: 0.1rem;       /* مسافة من اليمين */
+  position: relative;
+  top: 0;
+  left: 100px;
+
 }
 
-
-@media (min-width: 450px) {
-  .theme-switch{
-
-    display: none;
-
-  }
-  .li1{
-
-    margin-right: 10px;
-
-  }
-  .p-container{
-
-    margin-top: 2000px;
-
-  }
-  .img-smaller2{
-
-    display: none;
-
-  }
+/* ========== Media Queries ========== */
+@media (max-width: 450px) {
+  .title { font-size: 16px; white-space: normal; }
+  .p, .p1, .p11 { font-size: 14px; padding: 4px; }
+  .img-smaller { width: 80px; }
+  .img-smaller2 { display: none; }
+  .img {  }
+  .li1{ font-size: 10px; }
 }
+
+@media (min-width: 321px) and (max-width: 600px) {
+  .title { font-size: 20px; }
+  .img-smaller { width: 120px; }
+  .img-smaller2 { display: none; }
+}
+
