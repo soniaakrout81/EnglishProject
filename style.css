@@ -471,19 +471,3 @@ body {
 
 }
 
-/* ========== Media Queries ========== */
-@media (max-width: 450px) {
-  .title { font-size: 16px; white-space: normal; }
-  .p, .p1, .p11 { font-size: 14px; padding: 4px; }
-  .img-smaller { width: 80px; }
-  .img-smaller2 { display: none; }
-  .img {  }
-  .li1{ font-size: 10px; }
-}
-
-@media (min-width: 321px) and (max-width: 600px) {
-  .title { font-size: 20px; }
-  .img-smaller { width: 120px; }
-  .img-smaller2 { display: none; }
-}
-
