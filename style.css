@@ -63,7 +63,7 @@ body {
   text-align: center;
   font-weight: 700;
   white-space: nowrap;
-  font-size: 150px;
+  font-size: 250px;
   margin-bottom: 10px;
 }
 
@@ -75,7 +75,7 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 16px;
-  font-size: 75px;
+  font-size: 125px;
 }
 
 .p1{
@@ -167,7 +167,7 @@ header {
 
 /* ========== Images ========== */
 .img {
-  max-width: 250px;
+  height: 250px;
   width: 250px;
   border-radius: 300px;
   box-shadow: 0px 1px 50px 50px rgba(255,0,0,0.25);
@@ -175,7 +175,7 @@ header {
   display: block;
   margin: 16px 0;
   position: relative;
-  right: 1000px;
+  right: 750px;
 }
 
 .img-smaller{
@@ -214,13 +214,13 @@ header {
 
 /* Problems box */
 .problems {
-  width: 1500px;
-  height: 1000px;
+  width: 2500px;
+  height: 1500px;
   border-radius: 100px;
   padding: 16px;
   background: rgba(255,255,255,0.03);
   position: relative;
-  left: 800px;
+  left: 1250px;
 }
 .index-container{
 
@@ -467,7 +467,7 @@ body {
 .theme-switch {
   position: relative;
   top: 0;
-  left: 100px;
+  left: 750px;
 
 }
 
